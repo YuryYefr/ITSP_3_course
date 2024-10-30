@@ -1,0 +1,4 @@
+/.venv/
+/lab_1/.env
+/lab_1/flights.csv
+/lab_1/mariadb-data/
