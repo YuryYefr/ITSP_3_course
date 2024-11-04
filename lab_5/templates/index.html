@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extract Name from URL</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='js/connector.js') }}"></script>
+    <script>let values = {{ values | tojson | safe }};</script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+<div class="container">
+    <div class="div1">
+        <h1>Extract Name from URL</h1>
+        <input type="text" id="url" disabled>
+        <button id="next">Next</button>
+        <button id="crawl">Crawl</button>
+        <button id="restart" hidden>Restart</button>
+        <div id="result"></div>
+    </div>
+
+    <div class="div2">
+        <h3>Values list:</h3>
+        <div id="values-list">{{ values }}</div>
+    </div>
+</div>
+
+    <!-- Pop-up for Result List -->
+    <div id="popup-overlay"></div>
+        <div id="result-list-popup">
+            <h2>Result List</h2>
+        <div id="result-list"></div>
+        <button id="close-popup">Close</button>
+    </div>
+</body>
+</html>
